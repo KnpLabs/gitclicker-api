@@ -21,7 +21,7 @@ yarn dev
 
 ### `GET /api/shop/items`
 
-Response:
+Response: HTTP 200
 
 ```json
 [
@@ -52,3 +52,65 @@ Response:
   }
 ]
 ```
+
+### `GET /api/shop/items/:id`
+
+Response: HTTP 200
+
+```json
+{
+  "name": "Bash",
+  "price": 10,
+  "multiplier": 0.1
+}
+```
+
+### `POST /api/shop/items`
+
+Body:
+
+```json
+{
+  "name": "Svelte",
+  "price": 40000,
+  "multiplier": 45.0
+}
+```
+
+Response: HTTP 201
+
+```json
+{
+  "id": 1615820488694,
+  "name": "Svelte",
+  "price": 40000,
+  "multiplier": 45.0
+}
+```
+
+### `PUT /api/shop/items/:id`
+
+Body:
+
+```json
+{
+  "name": "Svelte",
+  "price": 40000,
+  "multiplier": 45.0
+}
+```
+
+Response: HTTP 200
+
+```json
+{
+  "id": 1615820488694,
+  "name": "Svelte",
+  "price": 40000,
+  "multiplier": 45.0
+}
+```
+
+### `DELETE /api/shop/items/:id`
+
+Response: HTTP 204
