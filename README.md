@@ -28,27 +28,27 @@ Response: HTTP 200
   {
     "name": "Bash",
     "price": 10,
-    "multiplier": 0.1
+    "linesPerMillisecond": 0.1
   },
   {
     "name": "Git",
     "price": 100,
-    "multiplier": 1.2
+    "linesPerMillisecond": 1.2
   },
   {
     "name": "Javascript",
     "price": 10000,
-    "multiplier": 14
+    "linesPerMillisecond": 14
   },
   {
     "name": "React",
     "price": 50000,
-    "multiplier": 75
+    "linesPerMillisecond": 75
   },
   {
     "name": "Vim",
     "price": 1000000,
-    "multiplier": 10000
+    "linesPerMillisecond": 10000
   }
 ]
 ```
@@ -61,7 +61,7 @@ Response: HTTP 200
 {
   "name": "Bash",
   "price": 10,
-  "multiplier": 0.1
+  "linesPerMillisecond": 0.1
 }
 ```
 
@@ -73,7 +73,7 @@ Body:
 {
   "name": "Svelte",
   "price": 40000,
-  "multiplier": 45.0
+  "linesPerMillisecond": 45.0
 }
 ```
 
@@ -84,7 +84,7 @@ Response: HTTP 201
   "id": 1615820488694,
   "name": "Svelte",
   "price": 40000,
-  "multiplier": 45.0
+  "linesPerMillisecond": 45.0
 }
 ```
 
@@ -96,7 +96,7 @@ Body:
 {
   "name": "Svelte",
   "price": 40000,
-  "multiplier": 45.0
+  "linesPerMillisecond": 45.0
 }
 ```
 
@@ -107,7 +107,7 @@ Response: HTTP 200
   "id": 1615820488694,
   "name": "Svelte",
   "price": 40000,
-  "multiplier": 45.0
+  "linesPerMillisecond": 45.0
 }
 ```
 
