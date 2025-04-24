@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express'
+import { handleError } from '../utils'
 import * as ItemService from './items.service'
 import { Item, BaseItem } from './item.interface'
 
@@ -11,7 +12,7 @@ itemsRouter.get('/', async (req: Request, res: Response) => {
 
     res.status(200).send(items)
   } catch (e) {
-    res.status(500).send(e.message)
+    handleError(e, res)
   }
 })
 
@@ -28,7 +29,7 @@ itemsRouter.get('/:id', async (req: Request, res: Response) => {
 
     res.status(404).send('item not found')
   } catch (e) {
-    res.status(500).send(e.message)
+    handleError(e, res)
   }
 })
 
@@ -41,7 +42,7 @@ itemsRouter.post('/', async (req: Request, res: Response) => {
 
     res.status(201).json(newItem)
   } catch (e) {
-    res.status(500).send(e.message)
+    handleError(e, res)
   }
 })
 
@@ -64,7 +65,7 @@ itemsRouter.put('/:id', async (req: Request, res: Response) => {
 
     res.status(201).json(newItem)
   } catch (e) {
-    res.status(500).send(e.message)
+    handleError(e, res)
   }
 })
 
@@ -76,6 +77,6 @@ itemsRouter.delete('/:id', async (req: Request, res: Response) => {
 
     res.sendStatus(204)
   } catch (e) {
-    res.status(500).send(e.message)
+    handleError(e, res)
   }
 })
