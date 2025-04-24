@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
-import { handleError } from '../utils'
 import * as ItemService from './items.service'
-import { Item, BaseItem } from './item.interface'
+import type { Item, BaseItem } from './item.interface'
+import { handleError } from '@/utils'
 
 export const itemsRouter = express.Router()
 

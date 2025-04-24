@@ -1,5 +1,5 @@
-import { Item, BaseItem } from './item.interface'
-import { Items } from './items.interface'
+import type { Item, BaseItem } from './item.interface'
+import type { Items } from './items.interface'
 
 const items: Items = {
   1: {

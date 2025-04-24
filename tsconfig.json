@@ -6,6 +6,10 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "outDir": "./dist",
+
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     
     "strict": true,
     "noUnusedParameters": true,
