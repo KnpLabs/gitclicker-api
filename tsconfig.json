@@ -6,6 +6,9 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "outDir": "./dist",
-    "forceConsistentCasingInFileNames": true 
+    
+    "strict": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
   }
 }
