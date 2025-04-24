@@ -2,7 +2,8 @@
 
 ## Requirements
 
-- `node >= v15.11.0` (Might work for lower version but not tested)
+- `node >= v18`
+- pnpm
 
 ## Install
 
