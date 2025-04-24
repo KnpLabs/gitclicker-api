@@ -1,11 +1,26 @@
 import { z } from '@hono/zod-openapi'
 
-const ItemSchema = z.object({
-  id: z.number().openapi({ example: 1 }),
-  name: z.string().openapi({ example: 'React' }),
-  price: z.number().openapi({ example: 499 }),
-  linesPerMillisecond: z.number().openapi({ example: 10 }),
-}).openapi('Item')
+const validateNumber = (val: string | number) => {
+  if (typeof val === 'number') return val
+  const parsed = Number.parseFloat(val)
+  if (Number.isNaN(parsed)) {
+    throw new Error('Invalid number format')
+  }
+  return parsed
+}
+
+const ItemSchema = z
+  .object({
+    id: z.number().openapi({ example: 1 }),
+    name: z.string().openapi({ example: 'React' }),
+    price: z
+      .union([z.number(), z.string().transform(val => validateNumber(val))])
+      .openapi({ example: 499.99 }),
+    linesPerMillisecond: z
+      .union([z.number(), z.string().transform(val => validateNumber(val))])
+      .openapi({ example: 0.8 }),
+  })
+  .openapi('Item')
 
 const BaseItemSchema = ItemSchema.omit({ id: true }).openapi('BaseItem')
 
