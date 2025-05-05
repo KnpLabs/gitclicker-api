@@ -1,8 +1,8 @@
-import * as dotenv from 'dotenv'
-import express from 'express'
 import cors from 'cors'
+import dotenv from 'dotenv'
+import express from 'express'
 import helmet from 'helmet'
-import { itemsRouter } from './items/items.router'
+import { itemsRouter } from '@/items/items.router'
 
 dotenv.config()
 
@@ -10,7 +10,7 @@ if (!process.env.PORT) {
   process.exit(1)
 }
 
-const PORT: number = parseInt(process.env.PORT as string, 10)
+const PORT: number = Number.parseInt(process.env.PORT, 10)
 
 const app = express()
 
